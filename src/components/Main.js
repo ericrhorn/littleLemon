@@ -4,6 +4,8 @@ import food1 from '../assets/greek-salad.jpg'
 import food3 from '../assets/lemon_dessert.jpg'
 import food2 from '../assets/bruchetta.png'
 
+import MopedIcon from '@mui/icons-material/Moped';
+
 const Main = () => {
   return (
     <>
@@ -11,8 +13,6 @@ const Main = () => {
     <div className="container">
 
       <div className='color'>
-
-
         <div className='header'>
           <div className='title-content'>
             <h1>Little Lemon</h1>
@@ -49,7 +49,12 @@ const Main = () => {
                 </p>
               </div>
               <div className='item-delivery'>
-                <h4>Out for delivery</h4>
+                <div style={{marginTop: '-20px'}}>
+                    <h4>Order a delivery</h4>
+                </div>
+                <div>
+                  <MopedIcon/>
+                </div>
               </div>
             </div>
             <div className='item'>
@@ -65,8 +70,13 @@ const Main = () => {
                   Our Bruchetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil.
                 </p>
               </div>
-              <div className='item-delivery'>
-                <h4>Out for delivery</h4>
+                <div className='item-delivery'>
+                <div style={{marginTop: '-20px'}}>
+                    <h4>Order a delivery</h4>
+                </div>
+                <div>
+                  <MopedIcon/>
+                </div>
               </div>
 
             </div>
@@ -83,8 +93,13 @@ const Main = () => {
                   This comes straight from grandmas recipe book, every last ingredient has been sourced and is as authentic as can be imagined.
                 </p>
               </div>
-              <div className='item-delivery'>
-                <h4>Out for delivery</h4>
+                <div className='item-delivery'>
+                  <div style={{marginTop: '-20px'}}>
+                      <h4>Order a delivery</h4>
+                  </div>
+                  <div>
+                    <MopedIcon/>
+                  </div>
               </div>
             </div>
           </div>

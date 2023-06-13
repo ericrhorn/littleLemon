@@ -198,6 +198,10 @@ img {
 .item-delivery{
   position: absolute;
   bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 225px;
+  height: 20px;
 }
 
 .money {
