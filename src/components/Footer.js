@@ -3,9 +3,9 @@
 const Footer = () => {
   return (
     <>
-    <h1>
-      Footer
-    </h1>
+      <p style={{textAlign: 'center', fontFamily:'Karla', margin: '50px'}}>
+        @LittleLemonRestaurant
+      </p>
     </>
   )
 }
