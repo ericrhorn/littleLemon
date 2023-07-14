@@ -1,3 +1,4 @@
+
 nav {
   display: flex;
   text-align: center;
@@ -37,7 +38,6 @@ img {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
 }
 
 .header{
@@ -149,7 +149,7 @@ img {
   flex: 1;
   margin: 20px;
   height: 450px;
-  width: 250px;
+  max-width: 250px;
   background-color: #edefee;
 }
 
@@ -207,3 +207,143 @@ img {
 .money {
   color: #ee9972;
 }
+
+button:hover {
+  background-color: #ee9972;
+  cursor: pointer;
+}
+
+button:focus {
+  background-color: #495e57;
+}
+
+.icon:hover{
+  cursor: pointer;
+}
+
+.res-container h1{
+  text-align: center;
+}
+
+
+
+
+
+.color1{
+  display: flex;
+  background-color: #495e57;
+  height: 150px;
+  justify-content: center;
+  align-items: center;
+}
+
+.res-button {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.color1 h1 {
+  color: #f4ce14;
+  font-family: "Markazi Text";
+  font-size: 40px;
+}
+
+.res-button button {
+  background-color: #f4ce14;
+  border-radius: 10px;
+  height: 30px;
+  width: 150px;
+  border: none;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: -10px;
+}
+
+button:hover {
+  background-color: #ee9972;
+  cursor: pointer;
+}
+
+button:focus {
+  background-color: #495e57;
+}
+
+
+
+
+
+.container{
+    border: solid black 1px;
+    /* height: 100%;
+    width: 100%; */
+  }
+
+  .main{
+    text-align: center;
+    height: auto;
+  }
+
+  .main-content{
+    display: flex;
+    text-align: center;
+    border: black solid 1px;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    margin: auto;
+    /* margin: 5px;
+    padding: 5px; */
+    height: auto;
+    background-color: lightblue;
+    
+  }
+
+  form {
+    display: flex;
+  }
+
+  .one, .two{
+    border: solid yellow 2px;
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(2);
+    margin: 20px;
+    padding: 10px;
+    /* width: 500px;
+    height: 500px; */
+    /* min-width: 500px;
+    min-height: 500px; */
+    /* max-width: auto;
+    max-height: auto; */
+  }
+  @media (max-width: 800px) {
+  .main-content form {
+    display: grid;
+    /* width: 90%;  */
+    /* Set a percentage width to allow the elements to break earlier */
+    /* Center the header horizontally */
+    /* margin-left: auto; 
+    margin-right: auto; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    background-color: red;
+    /* text-align: center; */
+    /* margin: auto; */
+  }
+  /* .one, .two{
+    border: solid black 5px;
+    width: auto;
+  } */
+}
+
+
+
+
+
+
+
+
+
+
+
+

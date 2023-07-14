@@ -3,7 +3,7 @@
 const Footer = () => {
   return (
     <>
-      <p style={{textAlign: 'center', fontFamily:'Karla', margin: '50px'}}>
+      <p style={{textAlign: 'center', fontFamily: 'Karla', position: 'fixed', bottom: 0, width: '100%' }}>
         @LittleLemonRestaurant
       </p>
     </>

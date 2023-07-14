@@ -4,21 +4,28 @@ import food1 from '../assets/greek-salad.jpg'
 import food3 from '../assets/lemon_dessert.jpg'
 import food2 from '../assets/bruchetta.png'
 
+import { useNavigate } from 'react-router-dom';
+
 import MopedIcon from '@mui/icons-material/Moped';
 
 const Main = () => {
+
+  const navigate = useNavigate();
+
+const handlePageChange = () => {
+window.location.href="/order"
+}
+
   return (
     <>
-
     <div className="container">
-
       <div className='color'>
         <div className='header'>
           <div className='title-content'>
             <h1>Little Lemon</h1>
             <h2>Chicago</h2>
             <p>We are a family owned Mediteranean resturant, focused on traditional recipies served with a modern twist</p>
-            <button>Reserve a table</button>
+            <button onClick={() => navigate('/reservations')}>Reserve a table</button>
           </div>
           
           <div className='title-image'>
@@ -31,7 +38,7 @@ const Main = () => {
         <div className='menu-container'>
           <div className='menu-banner'>
             <h1>This weeks specials!</h1>
-            <button>Online Menu</button>
+            <button onClick={() => navigate('/order')}>Online Menu</button>
           </div>
 
           <div className='menu-items'>
@@ -50,10 +57,10 @@ const Main = () => {
               </div>
               <div className='item-delivery'>
                 <div style={{marginTop: '-20px'}}>
-                    <h4>Order a delivery</h4>
+                    <h4><a href="/order">Order a delivery</a></h4>
                 </div>
-                <div>
-                  <MopedIcon/>
+                <div className='icon'>
+                  <MopedIcon onClick={handlePageChange}/>
                 </div>
               </div>
             </div>
@@ -72,10 +79,10 @@ const Main = () => {
               </div>
                 <div className='item-delivery'>
                 <div style={{marginTop: '-20px'}}>
-                    <h4>Order a delivery</h4>
+                    <h4><a href="/order">Order a delivery</a></h4>
                 </div>
-                <div>
-                  <MopedIcon/>
+                <div className='icon'>
+                  <MopedIcon onClick={handlePageChange}/>
                 </div>
               </div>
 
@@ -95,10 +102,10 @@ const Main = () => {
               </div>
                 <div className='item-delivery'>
                   <div style={{marginTop: '-20px'}}>
-                      <h4>Order a delivery</h4>
+                      <h4><a href="/order">Order a delivery</a></h4>
                   </div>
-                  <div>
-                    <MopedIcon/>
+                  <div className='icon'>
+                    <MopedIcon onClick={handlePageChange}/>
                   </div>
               </div>
             </div>

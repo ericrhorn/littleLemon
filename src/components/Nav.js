@@ -1,4 +1,3 @@
-import {Link} from 'react-router-dom';
 import logo from '../assets/little_lemon_logo.png'
 import '../style/style.css'
 
@@ -9,12 +8,12 @@ const Nav = () => {
       <nav>
           <img src={logo} alt=""/>
           <div className='navLinks'>
-            <a href="">Home</a>
-            <a href="">About</a>
-            <a href="">Menu</a>
-            <a href="">Reservations</a>
-            <a href="">Order Online</a>
-            <a href="">Login</a>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/menu">Menu</a>
+            <a href="/reservations">Reservations</a>
+            <a href="/order">Order Online</a>
+            <a href="/login">Login</a>
           </div>
       </nav>
     </>
