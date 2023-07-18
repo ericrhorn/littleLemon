@@ -1,4 +1,5 @@
-import '../style/style.css';
+import '../style/home.css';
+
 import titleImg from '../assets/food.png';
 import food1 from '../assets/greek-salad.jpg'
 import food3 from '../assets/lemon_dessert.jpg'
@@ -27,17 +28,14 @@ window.location.href="/order"
             <p>We are a family owned Mediteranean resturant, focused on traditional recipies served with a modern twist</p>
             <button onClick={() => navigate('/reservations')}>Reserve a table</button>
           </div>
-          
           <div className='title-image'>
             <img style={{height: "325px", width: '300px'}} className='image' src={titleImg} alt="" />
           </div>
         </div>
-          
-
       </div>
         <div className='menu-container'>
           <div className='menu-banner'>
-            <h1>This weeks specials!</h1>
+            <h1 style={{marginRight: '100px'}}>This weeks specials!</h1>
             <button onClick={() => navigate('/order')}>Online Menu</button>
           </div>
 
@@ -89,7 +87,7 @@ window.location.href="/order"
             </div>
             <div className='item'>
               <div>
-                <img style={{height: '166px', width:'250px'}} src={food3} alt="" />
+                <img style={{height: '166px', width:'330px', objectFit:'cover'}} src={food3} alt="" />
               </div>
               <div className='item-name'>
                 <h4>Lemon Dessert</h4>
@@ -111,11 +109,7 @@ window.location.href="/order"
             </div>
           </div>
         </div>
-
-
     </div>
-
-
     </>
   )
 }

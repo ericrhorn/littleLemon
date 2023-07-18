@@ -9,17 +9,26 @@ import Order from './components/Order';
 import Login from './components/Login';
 
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import { useState } from 'react';
+import Confirmation from './components/Confirmation';
 
-function App() {
+function App(props) {
+
+  const [dinerData, setDinerData] = useState([])
+
+
+
   return (
     <>
-    <Nav/>
+    {/* <Nav/> */}
       <BrowserRouter>
+        <Nav/>
         <Routes>
           <Route path='/' element={<Main/>}/>
           <Route path='/about' element={<About/>}/>
           <Route path='/menu' element={<Menu/>} />
-          <Route path='/reservations' element={<Reservations/>} />
+          <Route path='/reservations' element={<Reservations dinerData={dinerData} setDinerData={setDinerData}/>} />
+          <Route path='confirmation' element={<Confirmation dinerData={dinerData} setDinerData={setDinerData} />}/>
           <Route path='/order' element={<Order/>} />
           <Route path='/login' element={<Login/>} />
         </Routes>

@@ -1,240 +1,11 @@
-
-nav {
+.color1{
   display: flex;
-  text-align: center;
-  justify-content: center;
-  margin: 20px;
-}
-
-a{
-  display: inline-flex;
-  padding-right: 30px;
-  text-decoration: none;
-  color: black;
-}
-
-img {
-  padding-right: 80px;
-}
-
-.navLinks{
-  padding-top: 10px;
-  display: inline-flex;
-  font-family: 'Karla';
-  font-size: 20px;
-}
-
-/* Main component styling */
-
-.container{
-  /* height: 100vh;
-  background-color: pink;
-  border: 1px solid red; */
-}
-
-.color{
+  align-items: center;
   background-color: #495e57;
   height: 300px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-.header{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  max-width: 1000px;
-  margin-left: auto;
-  width: 100%;
-  max-width: 1000px;
-  margin: 10px;
-  box-sizing: border-box; 
-}
-
-
-@media (max-width: 700px) {
-  .header {
-    display: block;
-    width: 90%; /* Set a percentage width to allow the elements to break earlier */
-    margin-left: auto; /* Center the header horizontally */
-    margin-right: auto;
-  }
-}
-
-@media (max-width: 700px) {
-  .color{
-    display: blck;
-    height: auto; /* Remove fixed height to allow the div to expand */
-  }
-}
-
-
-.title-content{
-  height: 250px;
-  margin: 10px;
-  width: 250px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.title-content h1 {
-  color: #f4ce14;
-  font-family: "Markazi Text";
-  font-size: 40px;
-}
-
-.title-content h2 {
-  color: white;
-  font-family: "Markazi Text";
-  margin-top: -20px;
-}
-
-.title-content p {
-  color: white;
-  font-family: "Karla";
-  font-size: 20px;
-  margin-top: -10px;
-
-}
-
-.title-content button {
-  background-color: #f4ce14;
-  border-radius: 10px;
-  height: 30px;
-  width: 150px;
-  border: none;
-  font-size: 15px;
-  font-weight: bold;
-  margin-top: -10px;
-}
-
-.title-image{
-  margin: 10px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media (max-width: 700px) {
-  .title-content,
-  .title-image {
-    width: 90%; /* Set a percentage width to allow the elements to break earlier */
-  }
-}
-
-.menu-container{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 100px;
-}
-
-.menu-banner{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  min-width: 850px;
-  justify-content: space-between;
-}
-
-
-.menu-items {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.item {
-  flex: 1;
-  margin: 20px;
-  height: 450px;
-  max-width: 250px;
-  background-color: #edefee;
-}
-
-@media (max-width: 700px) {
-  .menu-items {
-    display: grid;
-    grid-template-columns: auto;
-    margin: 20px;
-  }
-  .menu-banner {
-    display: grid;
-    justify-content: center;
-  }
-}
-
-.menu-banner button {
-  background-color: #f4ce14;
-  border-radius: 10px;
-  height: 30px;
-  width: 150px;
-  border: none;
-  font-size: 15px;
-  font-weight: bold;
-  margin-top: -10px;
-}
-
-.menu-banner, h2 {
-  font-family: "Markazi Text";
-  font-size: 20px;
-}
-
-.item{
-  font-family: "Karla";
-  position: relative;
-}
-
-.item-name{
-  display: flex;
-  justify-content: space-around;
-}
-
-.item-desc, .item-delivery{
-  padding: 10px;
-}
-
-.item-delivery{
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  justify-content: space-between;
-  width: 225px;
-  height: 20px;
-}
-
-.money {
-  color: #ee9972;
-}
-
-button:hover {
-  background-color: #ee9972;
-  cursor: pointer;
-}
-
-button:focus {
-  background-color: #495e57;
-}
-
-.icon:hover{
-  cursor: pointer;
-}
-
-.res-container h1{
-  text-align: center;
-}
-
-
-
-
-
-.color1{
-  display: flex;
-  background-color: #495e57;
-  height: 150px;
-  justify-content: center;
-  align-items: center;
 }
 
 .res-button {
@@ -272,11 +43,7 @@ button:focus {
 
 
 
-.container{
-    border: solid black 1px;
-    /* height: 100%;
-    width: 100%; */
-  }
+
 
   .main{
     text-align: center;
@@ -285,29 +52,49 @@ button:focus {
 
   .main-content{
     display: flex;
+
+    flex-direction: column;
+
     text-align: center;
     border: black solid 1px;
+    border-radius: 20px;
     justify-content: center;
     align-items: center;
-    width: 800px;
+    max-width: 750px;
+    width: auto;
     margin: auto;
-    /* margin: 5px;
-    padding: 5px; */
     height: auto;
-    background-color: lightblue;
-    
+    /* background-color: lightgrey; */
+    background-color: white;
+    margin-top: -75px;
+    padding-bottom: 25px;
+
+  }
+
+  .form-title{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
   }
 
   form {
     display: flex;
+    flex-wrap: wrap;
+
   }
 
+  /* .form-title{
+    border: red 5px solid;
+    color: red;
+  } */
+
   .one, .two{
-    border: solid yellow 2px;
+    /* border: solid yellow 2px; */
     display: grid;
     text-align: center;
     grid-template-columns: repeat(2);
-    margin: 20px;
+    margin: 0px 20px;
     padding: 10px;
     /* width: 500px;
     height: 500px; */
@@ -326,7 +113,7 @@ button:focus {
     margin-right: auto; */
     /* justify-content: center; */
     /* align-items: center; */
-    background-color: red;
+    /* background-color: red; */
     /* text-align: center; */
     /* margin: auto; */
   }
@@ -335,6 +122,19 @@ button:focus {
     width: auto;
   } */
 }
+
+.progress-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.progress-bar-container {
+  width: 400px;
+  margin-bottom: 20px;
+
+}
+
 
 
 

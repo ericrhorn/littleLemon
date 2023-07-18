@@ -1,129 +1,76 @@
+import { useEffect, useState } from "react";
 import '../style/style.css';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Confirmation from "./Confirmation";
+import ReservationForm from "./ReservationForm";
 
-const Reservations = () => {
+const Reservations = (props) => {
 
-  const submitHandler = () => {
+    const [percent, setPercent] = useState(0)
+    // const [isSubmitted, setIsSubmitted] = useState(false)
+    console.log(percent)
 
-  }
+    const [isSubmitted, setIsSubmitted] = useState(false)
+    console.log(isSubmitted)
+
+
+
+    const {dinerData, setDinerData} = props;
+
+    //use in a button
+  // const progress = () => {
+  //   setPercent(percent + 50)
+  // }
+
+  const [showPercent, setShowPercent] = useState(percent);
+
+  useEffect(() => {
+    setShowPercent(showPercent)
+  }, [showPercent])
+
 
   return (
     <>
-     <div className="color1">
+    <div className="container">
+      <div className="color1">
         <h1>Little Lemon Reservations</h1>
       </div>
-    <div class="container">
-    <div class="main">
-      <div class="main-content">
-        <form onSubmit={submitHandler}>
-          <div class="one">
-            <h4>Please complete the form </h4>
-            <label>First Name</label>
-            <input type="text" name="" id="" />
-            <label>Last Name</label>
-            <input type="text" name="" id="" />
-            <label>Email</label>
-            <input type="text" name="" id="" />
-            <label>Phone Numner</label>
-            <input type="text" name="" id="" />
-          </div>
-          <div class="two">
-            <h4>Please complete the form </h4>
-            <label>First Name</label>
-            <input type="text" name="" id="" />
-            <label>Last Name</label>
-            <input type="text" name="" id="" />
-            <label>Email</label>
-            <input type="text" name="" id="" />
-            <label>Phone Numner</label>
-            <input type="text" name="" id="" />
-          </div>
-        </form>
-      </div>
-        <div className='res-button'>
-          <button>Make Reservation</button>
-        </div>
-        <div>
-          <ProgressBar animated now={20} />
-          <h1>Hello???</h1>
+    <div className="container">
+      <div className="main">
+        <div className="main-content">
+
+          {
+            isSubmitted ?
+              <Confirmation
+                dinerData={dinerData}
+                setDinerData={setDinerData}
+              />
+              :
+              <ReservationForm
+                isSubmitted={isSubmitted}
+                setIsSubmitted={setIsSubmitted}
+                dinerData={dinerData}
+                setDinerData={setDinerData}
+                percent={percent}
+                setPercent={setPercent}
+              />
+          }
+
+
+            {/* <ReservationForm isSubmitted={isSubmitted} setIsSubmitted={setIsSubmitted} dinerData={dinerData} setDinerData={setDinerData}/>
+            {isSubmitted && <Confirmation dinerData={dinerData} setDinerData={setDinerData}/>} */}
+
+
+            <div className="progress-bar-container" style={{paddingTop:'20px'}}>
+              <ProgressBar animated now={percent} />
+            </div>
+
         </div>
     </div>
   </div>
-      {/* <div className="res-container">
-        <div className="color1">
-          <h1>Little Lemon Reservations</h1>
-        </div>
-        
-          <div className='res-form'>
-            <form onSubmit={submitHandler}>
-              <div className="user-info">
-                <h4>Please complete the form </h4>
-                <label>First Name</label>
-                <input type="text" name="" id="" />
-                <label>Last Name</label>
-                <input type="text" name="" id="" />
-                <label>Email</label>
-                <input type="text" name="" id="" />
-                <label>Phone Numner</label>
-                <input type="text" name="" id="" />
-              </div>
-              <div className="res-info">
-                <h4>Please complete the form </h4>
-                <label>First Name</label>
-                <input type="text" name="" id="" />
-                <label>Last Name</label>
-                <input type="text" name="" id="" />
-                <label>Email</label>
-                <input type="text" name="" id="" />
-                <label>Phone Numner</label>
-                <input type="text" name="" id="" />
-              </div>
-              <div className='res-button'>
-                <button>Make Reservation</button>
-              </div>
-            </form>
-          </div>
-        
-      </div> */}
-      {/* <div className="test-container">
-        <h1>Hello</h1>
-        <div className="test-color">
-
-        </div>
-          <div className="test-form">
-
-            <div className="form1">
-              <p>form1</p>
-                <label>First Name</label>
-                <input type="text" name="" id="" />
-                <label>Last Name</label>
-                <input type="text" name="" id="" />
-                <label>Email</label>
-                <input type="text" name="" id="" />
-                <label>Phone Numner</label>
-                <input type="text" name="" id="" />
-            </div>
-
-            <div className="form2">
-              <p>form2</p>
-                <label>First Name</label>
-                <input type="text" name="" id="" />
-                <label>Last Name</label>
-                <input type="text" name="" id="" />
-                <label>Email</label>
-                <input type="text" name="" id="" />
-                <label>Phone Numner</label>
-                <input type="text" name="" id="" />
-            </div>
-              <div className='res-button'>
-                <button>Make Reservation</button>
-              </div>
-          </div>
-          
-      </div> */}
-      
-    </>
+    </div>
+  </>
   )
 }
 
