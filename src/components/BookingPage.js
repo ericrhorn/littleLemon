@@ -3,20 +3,21 @@ import '../style/style.css';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Confirmation from "./Confirmation";
-import ReservationForm from "./ReservationForm";
+import BookingForm from "./BookingForm";
 
-const Reservations = (props) => {
+const BookingPage = (props) => {
 
     const [percent, setPercent] = useState(0)
     // const [isSubmitted, setIsSubmitted] = useState(false)
-    console.log(percent)
+    console.log('updated percent', percent)
 
     const [isSubmitted, setIsSubmitted] = useState(false)
-    console.log(isSubmitted)
+    console.log('form submitted?', isSubmitted)
 
 
 
     const {dinerData, setDinerData} = props;
+    console.log('diner data booking', dinerData)
 
     //use in a button
   // const progress = () => {
@@ -39,7 +40,6 @@ const Reservations = (props) => {
     <div className="container">
       <div className="main">
         <div className="main-content">
-
           {
             isSubmitted ?
               <Confirmation
@@ -47,7 +47,7 @@ const Reservations = (props) => {
                 setDinerData={setDinerData}
               />
               :
-              <ReservationForm
+              <BookingForm
                 isSubmitted={isSubmitted}
                 setIsSubmitted={setIsSubmitted}
                 dinerData={dinerData}
@@ -74,4 +74,4 @@ const Reservations = (props) => {
   )
 }
 
-export default Reservations;
+export default BookingPage;

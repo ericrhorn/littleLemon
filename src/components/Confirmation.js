@@ -3,6 +3,7 @@ import React from "react";
 const Confirmation = (props) => {
 
 const {dinerData, setDinerData} = props;
+console.log('diner date confirm', dinerData)
 
 
   return (

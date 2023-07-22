@@ -4,7 +4,7 @@ import Main from './components/Main';
 import Footer from './components/Footer';
 import About from './components/About';
 import Menu from './components/Menu';
-import Reservations from './components/Reservations';
+import BookingPage from './components/BookingPage';
 import Order from './components/Order';
 import Login from './components/Login';
 
@@ -27,7 +27,7 @@ function App(props) {
           <Route path='/' element={<Main/>}/>
           <Route path='/about' element={<About/>}/>
           <Route path='/menu' element={<Menu/>} />
-          <Route path='/reservations' element={<Reservations dinerData={dinerData} setDinerData={setDinerData}/>} />
+          <Route path='/reservations' element={<BookingPage dinerData={dinerData} setDinerData={setDinerData}/>} />
           <Route path='confirmation' element={<Confirmation dinerData={dinerData} setDinerData={setDinerData} />}/>
           <Route path='/order' element={<Order/>} />
           <Route path='/login' element={<Login/>} />
