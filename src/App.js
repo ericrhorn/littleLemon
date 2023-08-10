@@ -12,29 +12,43 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import { useState } from 'react';
 import Confirmation from './components/Confirmation';
 
+import background from './assets/restaurant.jpg'
+
+
+
 function App(props) {
 
   const [dinerData, setDinerData] = useState([])
 
-
-
   return (
     <>
-    {/* <Nav/> */}
+    <div style={{backgroundImage: `url(${background})`, backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',}}>
+{/* <Nav/> */}
       <BrowserRouter>
         <Nav/>
         <Routes>
           <Route path='/' element={<Main/>}/>
           <Route path='/about' element={<About/>}/>
           <Route path='/menu' element={<Menu/>} />
-          <Route path='/reservations' element={<BookingPage dinerData={dinerData} setDinerData={setDinerData}/>} />
-          <Route path='confirmation' element={<Confirmation dinerData={dinerData} setDinerData={setDinerData} />}/>
+          <Route path='/reservations' 
+            element={<BookingPage 
+              dinerData={dinerData} 
+              setDinerData={setDinerData}
+              />} />
+          <Route path='confirmation' 
+            element={<Confirmation 
+              dinerData={dinerData} 
+              setDinerData={setDinerData} 
+              />}/>
           <Route path='/order' element={<Order/>} />
           <Route path='/login' element={<Login/>} />
         </Routes>
       </BrowserRouter>
       {/* <Header/> */}
       <Footer/>
+    </div>
+    
     </>
   );
 }

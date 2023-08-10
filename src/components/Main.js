@@ -33,10 +33,10 @@ window.location.href="/order"
           </div>
         </div>
       </div>
-        <div className='menu-container'>
+        <div className='menu-container' style={{backgroundColor:'white', borderRadius: '15px', padding: '15px'}}>
           <div className='menu-banner'>
             <h1 style={{marginRight: '100px'}}>This weeks specials!</h1>
-            <button onClick={() => navigate('/order')}>Online Menu</button>
+            <button onClick={() => navigate('/menu')}>Online Menu</button>
           </div>
 
           <div className='menu-items'>
@@ -109,6 +109,9 @@ window.location.href="/order"
             </div>
           </div>
         </div>
+        <div style={{ height: '500px', width: '1000px', backgroundColor:'white', justifyContent: 'center', alignContent:'center', marginTop:'50px', borderRadius: '15px'}}>
+            hello
+          </div>
     </div>
     </>
   )
