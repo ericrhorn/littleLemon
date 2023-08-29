@@ -16,8 +16,8 @@ const Main = () => {
 
   const navigate = useNavigate();
 
-const handlePageChange = () => {
-window.location.href="/order"
+  const handlePageChange = () => {
+  window.location.href="/order"
 }
 
   return (
@@ -92,7 +92,7 @@ window.location.href="/order"
             </div>
             <div className='item'>
               <div>
-                <img style={{height: '166px', width:'100%', objectFit:'cover'}} src={food3} alt="" />
+                <img style={{height: '166px', width:'250px', objectFit:'cover'}} src={food3} alt="" />
               </div>
               <div className='item-name'>
                 <h4>Lemon Dessert</h4>

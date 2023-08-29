@@ -123,7 +123,7 @@ const BookingForm = (props) => {
   return (
     <>
       <div style={{marginTop: '50px'}}className='form-title' noValidate>
-        <h4>Please Complete the diner form</h4>
+        <h4>Please Complete the reservation form</h4>
       </div>
       <form onSubmit={handleSubmit}  id='res-submit'>
         <div className="one">

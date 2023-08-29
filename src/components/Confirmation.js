@@ -8,10 +8,10 @@ console.log('diner date confirm', dinerData)
 
   return (
     <>
-    <div style={{marginTop: '50px'}}className='form-title' noValidate>
-        <h4>Your Reservation is Confirmed!
+    <div style={{marginTop: '50px', borderBottom:'1px solid black', width:'80%'}}className='form-title' noValidate>
+        <h2>Your Reservation is Confirmed!
           <br/>
-          See you soon</h4>
+          See you soon</h2>
     </div>
       {
         dinerData && dinerData.length > 0 ?
@@ -19,16 +19,16 @@ console.log('diner date confirm', dinerData)
           <div key={idx}>
               <form id='res-submit'>
                 <div className="one">
-                  <p><strong>Diner Information</strong></p>
-                    <p>{d.firstName} {d.lastName}</p>
-                    <p>{d.email}</p>
-                    <p>{d.phoneNumber}</p>
+                  <h4>Diner Information</h4>
+                    <h5>{d.firstName} {d.lastName}</h5>
+                    <h5>{d.email}</h5>
+                    <h5>{d.phoneNumber}</h5>
                 </div>
                 <div className="two">
-                  <p><strong>Reservation Information</strong></p>
-                    <p>{d.date} at {d.time}</p>
-                    <p>{d.guests} dinners</p>
-                    <p>{d.occasion}</p>
+                  <h4>Reservation Information</h4>
+                    <h5>{d.date} at {d.time}</h5>
+                    <h5>{d.guests} dinners</h5>
+                    <h5>{d.occasion}</h5>
                 </div>
               </form>
 

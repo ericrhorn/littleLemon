@@ -6,13 +6,13 @@ const Footer = () => {
     <>
     <footer className="footer">
       <div className="footer-container">
-        <div className="footer-image">
+        <div className="footer-items">
           <img src={logo} alt="" />
           <p>
             @LittleLemonRestaurant
           </p>
         </div>
-        <div className="footer-info">
+        <div className="footer-items">
           <h4>
             Resturant Hours
           </h4>
@@ -22,7 +22,7 @@ const Footer = () => {
             Fri - Sun 8am - 2pm & 4pm - 11pm
           </p>
         </div>
-        <div className="footer-location">
+        <div className="footer-items">
           <h4>
             Contanct Us
           </h4>

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import '../style/home.css'
 
 import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
 
 const Nav = () => {
@@ -43,7 +44,11 @@ const Nav = () => {
           </Link>
         </div>
         <div className='hamIcon' onClick={openMenu}>
-          <MenuIcon fontSize='large' />
+          {
+            showMenu ? <CloseIcon fontSize='large'/>
+            :
+            <MenuIcon fontSize='large' />
+          }
         </div>
       </nav>
       {showMenu && (
