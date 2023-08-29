@@ -4,6 +4,9 @@ import titleImg from '../assets/food.png';
 import food1 from '../assets/greek-salad.jpg'
 import food3 from '../assets/lemon_dessert.jpg'
 import food2 from '../assets/bruchetta.png'
+import image1 from '../assets/image1.jpg'
+import image2 from '../assets/image2.jpg'
+import image3 from '../assets/image3.jpg'
 
 import { useNavigate } from 'react-router-dom';
 
@@ -19,7 +22,7 @@ window.location.href="/order"
 
   return (
     <>
-    <div className="container">
+    <main className="container">
       <div className='color'>
         <div className='header'>
           <div className='title-content'>
@@ -29,13 +32,15 @@ window.location.href="/order"
             <button onClick={() => navigate('/reservations')}>Reserve a table</button>
           </div>
           <div className='title-image'>
-            <img style={{height: "325px", width: '300px'}} className='image' src={titleImg} alt="" />
+            <img style={{height: "325px", width: '250px'}} className='image' src={titleImg} alt="" />
           </div>
         </div>
       </div>
-        <div className='menu-container' style={{backgroundColor:'white', borderRadius: '15px', padding: '15px'}}>
+        <div className='menu-container'>
           <div className='menu-banner'>
-            <h1 style={{marginRight: '100px'}}>This weeks specials!</h1>
+            <h1 style={{marginRight: '100px'}}>
+              This weeks specials!
+            </h1>
             <button onClick={() => navigate('/menu')}>Online Menu</button>
           </div>
 
@@ -87,7 +92,7 @@ window.location.href="/order"
             </div>
             <div className='item'>
               <div>
-                <img style={{height: '166px', width:'330px', objectFit:'cover'}} src={food3} alt="" />
+                <img style={{height: '166px', width:'100%', objectFit:'cover'}} src={food3} alt="" />
               </div>
               <div className='item-name'>
                 <h4>Lemon Dessert</h4>
@@ -109,10 +114,18 @@ window.location.href="/order"
             </div>
           </div>
         </div>
-        <div style={{ height: '500px', width: '1000px', backgroundColor:'white', justifyContent: 'center', alignContent:'center', marginTop:'50px', borderRadius: '15px'}}>
-            hello
+        <div className="sub-menu-container">
+          <div className="rest-image">
+            <img src={image1} alt="" style={{height: '230px'}}/>
           </div>
-    </div>
+          <div className="rest-image">
+              <img src={image2} alt="" style={{height: '230px'}}/>
+          </div>
+          <div className="rest-image">
+            <img src={image3} alt="" style={{height: '230px'}}/>
+          </div>
+        </div>
+    </main>
     </>
   )
 }

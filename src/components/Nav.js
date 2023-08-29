@@ -20,7 +20,7 @@ const Nav = () => {
 
   return (
     <>
-       <nav style={{backgroundColor:'white', height:'50px', width:'100%'}}>
+       <nav className='large-nav' style={{backgroundColor:'white', height:'50px', width:'100%'}}>
         <img src={logo} alt="" style={{height:'40px', paddingLeft: '15px'}} />
         <div className='navLinks'>
           <Link to='/' relative='path'>
@@ -47,7 +47,7 @@ const Nav = () => {
         </div>
       </nav>
       {showMenu && (
-        <div className='hamLinks'>
+        <nav className='hamLinks'>
           <Link onClick={closeMenu} to='/' relative='path'>
             Home
           </Link>
@@ -66,7 +66,7 @@ const Nav = () => {
           <Link onClick={closeMenu} to='/login' relative='path'>
             Login
           </Link>
-        </div>
+        </nav>
       )}
     </>
   )

@@ -78,11 +78,9 @@ const BookingPage = (props) => {
 
     const initializeTimes = initialTimes =>
     initialTimes = fetchAPI(new Date())
-    
-
 
     const [availableTimes, dispatch]  = useReducer(updateTimes, [], initializeTimes)
-    
+
     const navigate = useNavigate()
     const submitForm = ( formData ) => {
       const response = submitAPI(formData)
@@ -120,43 +118,42 @@ const BookingPage = (props) => {
 
   return (
     <>
-    <div className="container">
+    <main className="container">
       <div className="color1">
         <h1>Little Lemon Reservations</h1>
       </div>
-    <div className="container">
-      <div className="main">
-        <div className="main-content">
-          {
-            isSubmitted ?
-              <Confirmation
-                dinerData={dinerData}
-                setDinerData={setDinerData}
-              />
-              :
-              <BookingForm
-                isSubmitted={isSubmitted}
-                setIsSubmitted={setIsSubmitted}
-                dinerData={dinerData}
-                setDinerData={setDinerData}
-                // percent={percent}
-                // setPercent={setPercent}
-                // reservationTime={reservationTime}
-                // updateTimes={dispatch}
-                diner={diner}
-                setDiner={setDiner}
-                submitForm={submitForm}
-                availableTimes={availableTimes} updateTimes={dispatch}
-
-                // formErrors={formErrors}
-                // setFormErrors={setFormErrors}
-                // errors={errors}
-              />
-            }
+        <div className="container">
+          <div className="main">
+            <div className="main-content">
+              {
+                isSubmitted ?
+                  <Confirmation
+                    dinerData={dinerData}
+                    setDinerData={setDinerData}
+                  />
+                  :
+                  <BookingForm
+                    isSubmitted={isSubmitted}
+                    setIsSubmitted={setIsSubmitted}
+                    dinerData={dinerData}
+                    setDinerData={setDinerData}
+                    // percent={percent}
+                    // setPercent={setPercent}
+                    // reservationTime={reservationTime}
+                    // updateTimes={dispatch}
+                    diner={diner}
+                    setDiner={setDiner}
+                    submitForm={submitForm}
+                    availableTimes={availableTimes} updateTimes={dispatch}
+                    // formErrors={formErrors}
+                    // setFormErrors={setFormErrors}
+                    // errors={errors}
+                  />
+                }
+            </div>
         </div>
-    </div>
-  </div>
-    </div>
+      </div>
+    </main>
   </>
   )
 }

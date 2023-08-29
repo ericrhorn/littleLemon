@@ -2,14 +2,16 @@ import React from "react";
 
 const Confirmation = (props) => {
 
-const {dinerData, setDinerData} = props;
+const {dinerData} = props;
 console.log('diner date confirm', dinerData)
 
 
   return (
     <>
     <div style={{marginTop: '50px'}}className='form-title' noValidate>
-        <h4>Please enter CC info to confirmation reservation</h4>
+        <h4>Your Reservation is Confirmed!
+          <br/>
+          See you soon</h4>
     </div>
       {
         dinerData && dinerData.length > 0 ?
@@ -18,17 +20,15 @@ console.log('diner date confirm', dinerData)
               <form id='res-submit'>
                 <div className="one">
                   <p><strong>Diner Information</strong></p>
-                    <p>first name: {d.firstName}</p>
-                    <p>last name: {d.lastName}</p>
-                    <p>email name: {d.email}</p>
-                    <p>phone number: {d.phoneNumber}</p>
+                    <p>{d.firstName} {d.lastName}</p>
+                    <p>{d.email}</p>
+                    <p>{d.phoneNumber}</p>
                 </div>
                 <div className="two">
                   <p><strong>Reservation Information</strong></p>
-                    <p>date: {d.date}</p>
-                    <p>time: {d.time}</p>
-                    <p>guests: {d.guests}</p>
-                    <p>occasion: {d.occasion}</p>
+                    <p>{d.date} at {d.time}</p>
+                    <p>{d.guests} dinners</p>
+                    <p>{d.occasion}</p>
                 </div>
               </form>
 
@@ -36,12 +36,6 @@ console.log('diner date confirm', dinerData)
         )):
         null
       }
-      <div>
-        <h2>Credit Card Info</h2>
-      </div>
-      <div>
-        <button>Submit CC info</button>
-      </div>
     </>
   )
 }

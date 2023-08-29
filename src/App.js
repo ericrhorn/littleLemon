@@ -1,4 +1,4 @@
-import Header from './components/Header';
+// import Header from './components/Header';
 import Nav from './components/Nav';
 import Main from './components/Main';
 import Footer from './components/Footer';
@@ -24,7 +24,6 @@ function App(props) {
     <>
     <div style={{backgroundImage: `url(${background})`, backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',}}>
-{/* <Nav/> */}
       <BrowserRouter>
         <Nav/>
         <Routes>
@@ -45,7 +44,6 @@ function App(props) {
           <Route path='/login' element={<Login/>} />
         </Routes>
       </BrowserRouter>
-      {/* <Header/> */}
       <Footer/>
     </div>
     

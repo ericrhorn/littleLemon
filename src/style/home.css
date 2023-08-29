@@ -1,22 +1,29 @@
 /* Nav component styling */
 
-nav {
+/* nav {
   display: flex;
   text-align: center;
   justify-content: space-between;
   margin-top: 10px;
-  /* margin: 20px; */
+} */
+.large-nav {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  margin-top: 10px;
 }
 
-nav a{
+/* nav a{
   display: inline-flex;
   padding-right: 30px;
   text-decoration: none;
   color: black;
-}
-
-img {
-  padding-right: 80px;
+} */
+.large-nav a{
+  display: inline-flex;
+  padding-right: 30px;
+  text-decoration: none;
+  color: black;
 }
 
 .navLinks{
@@ -56,7 +63,6 @@ img {
     position: absolute;
     width: 100%;
     background-color: white;
-    /* height: 300px; */
   }
   .hamLinks, Link{
     display: flex;
@@ -70,13 +76,10 @@ img {
     font-family: 'Karla';
     font-size: 20px;
   }
-  /* a{
-    text-decoration: none;
-  } */
+
   Link, a {
     margin-bottom: 10px;
     color: black;
-    /* text-decoration: none; */
     width: 100%;
     padding: 10px 0;
   }
@@ -99,10 +102,6 @@ img {
 
 .container{
   margin-bottom: 100px;
-  /* border: red 5px solid; */
-  /* background-color: red; */
-  /* background-color: pink; */
-  /* border: 1px solid red; */
 }
 
 .color{
@@ -121,15 +120,15 @@ img {
   width: 100%;
   max-width: 1000px;
   margin: 10px;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 
 @media (max-width: 700px) {
   .header {
     display: block;
-    width: 90%; /* Set a percentage width to allow the elements to break earlier */
-    margin-left: auto; /* Center the header horizontally */
+    width: 90%;
+    margin-left: auto;
     margin-right: auto;
   }
 }
@@ -137,7 +136,7 @@ img {
 @media (max-width: 700px) {
   .color{
     display: blck;
-    height: auto; /* Remove fixed height to allow the div to expand */
+    height: auto;
   }
 }
 
@@ -190,7 +189,7 @@ img {
 @media (max-width: 700px) {
   .title-content,
   .title-image {
-    width: 90%; /* Set a percentage width to allow the elements to break earlier */
+    width: 90%;
   }
 }
 
@@ -200,6 +199,9 @@ img {
   align-items: center;
   justify-content: center;
   margin-top: 100px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 15px;
 }
 
 .menu-banner{
@@ -207,8 +209,6 @@ img {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  /* min-width: 850px; */
-  /* justify-content: space-between; */
 }
 
 .menu-items {
@@ -223,6 +223,8 @@ img {
   height: 450px;
   max-width: 250px;
   background-color: #edefee;
+  font-family: "Karla";
+  position: relative;
 }
 
 @media (max-width: 700px) {
@@ -253,10 +255,6 @@ img {
   font-size: 20px;
 }
 
-.item{
-  font-family: "Karla";
-  position: relative;
-}
 
 .item-name{
   display: flex;
@@ -301,3 +299,21 @@ button:focus {
   margin-top: -20px;
 }
 
+.sub-menu-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 50px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.rest-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid black 1px;
+}
