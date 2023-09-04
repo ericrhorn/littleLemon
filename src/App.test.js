@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import user from '@testing-library/user-event'
 import App from './App';
 import Main from './components/Main';
@@ -7,7 +7,7 @@ import BookingPage from './components/BookingPage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 
-
+// test if components render
   test("Renders App Component", () => {
     render(<App />);
   })
@@ -42,26 +42,25 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
   updateTimes: jest.fn(),
   submitForm: jest.fn(),
   diner: {
-    firstName: 'John', // Replace with an appropriate value
-    lastName: 'Doe', // Replace with an appropriate value
-    email: 'john.doe@example.com', // Replace with an appropriate value
-    phoneNumber: '1234567890', // Replace with an appropriate value
-    date: '2023-07-28', // Replace with an appropriate value
-    time: '12:00 PM', // Replace with an appropriate value
-    guests: '2', // Replace with an appropriate value
-    occasion: 'Just Dinner', // Replace with an appropriate value
+    firstName: 'John',
+    lastName: 'Doe',
+    email: 'john.doe@example.com',
+    phoneNumber: '1234567890',
+    date: '2023-07-28',
+    time: '12:00 PM',
+    guests: '2',
+    occasion: 'Just Dinner',
   },
   setDiner: jest.fn(),
   dinerData: [],
   setDinerData: jest.fn(),
+  formSubmit: jest.fn(),
 };
 
   const renderBookingForm = () => render(<BookingForm {...mockProps} />);
   describe('BookingForm component', () => {
-    test('renders the form fields and handles form submission', () => {
+    test('renders the form fields and handles form submission', async () => {
       renderBookingForm();
-    // const { getByLabelText, getByTestId, getByText } = renderBookingForm();
-    // const firstName = screen.getAllByLabelText
 
     // Check if form fields are rendered
     expect(screen.getByLabelText(/first name/i)).toBeInTheDocument();
@@ -72,28 +71,40 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
     expect(screen.getByLabelText(/time/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/guests/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/occasion/i)).toBeInTheDocument();
-    // Add more expect statements for other form fields as needed
+
 
     // Simulate user input and form submission
-    // fireEvent.change(screen.getByLabelText('First Name'), { target: { value: 'John' } });
-    // fireEvent.change(screen.getByLabelText(/last name/i), { target: { value: 'Doe' } });
-    // fireEvent.change(screen.getByLabelText(/email/i), { target: { value: 'john.doe@example.com' } });
-    // fireEvent.change(screen.getByLabelText(/date/i), { target: { value: '2023-07-27' } });
-    // Add more fireEvent.change for other form fields as needed
+    fireEvent.change(screen.getByLabelText('First Name'), { target: { value: 'John' } });
+    fireEvent.change(screen.getByLabelText(/last name/i), { target: { value: 'Doe' } });
+    fireEvent.change(screen.getByLabelText(/email/i), { target: { value: 'john.doe@example.com' } });
+    fireEvent.change(screen.getByLabelText(/date/i), { target: { value: '2023-07-27' } });
+    fireEvent.change(screen.getByLabelText(/time/i), { target: { value: '12:oo PM' } });
+    fireEvent.change(screen.getByLabelText(/guests/i), { target: { value: '2' } });
+    fireEvent.change(screen.getByLabelText(/occasion/i), { target: { value: 'Just Dinner' } });
+
 
     // Check if user input is reflected in the form fields
-    // expect(screen.getByLabelText(/first name/i)).toHaveValue('John');
-    // expect(screen.getByLabelText(/last name/i)).toHaveValue('Doe');
-    // expect(screen.getByLabelText(/email/i)).toHaveValue('john.doe@example.com');
-    // expect(screen.getByLabelText(/date/i)).toHaveValue('2023-07-28');
-    // Add more expect statements for other form fields as needed
+    expect(screen.getByLabelText(/first name/i)).toHaveValue('John');
+    expect(screen.getByLabelText(/last name/i)).toHaveValue('Doe');
+    expect(screen.getByLabelText(/email/i)).toHaveValue('john.doe@example.com');
+    expect(screen.getByLabelText(/date/i)).toHaveValue('2023-07-28');
+    expect(screen.getByLabelText(/time/i)).toHaveValue('12:00 PM');
+    expect(screen.getByLabelText(/guests/i)).toHaveValue('2');
+    expect(screen.getByLabelText(/occasion/i)).toHaveValue('Just Dinner');
 
+
+    
     // Simulate date change and check if updateTimes is called
     // fireEvent.change(screen.getByLabelText(/date/i), { target: { value: '2023-07-28' } });
     // expect(mockProps.updateTimes).toHaveBeenCalledWith('12:00 PM');
 
     // Simulate form submission and check if submitForm is called
-    // fireEvent.submit(screen.getByTestId('res-submit'));
-    // expect(mockProps.submitForm).toHaveBeenCalledTimes(1);
+    // fireEvent.submit(screen.getByText('Make Reservation'));
+    //     console.log('after form submit')
+    // await waitFor(() => {
+    //       console.log('inside waitFor')
+
+    //       expect(mockProps.submitForm).toHaveBeenCalledTimes(1);
+    // })
   });
 });
