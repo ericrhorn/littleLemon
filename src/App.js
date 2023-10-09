@@ -29,7 +29,7 @@ function App(props) {
         <Routes>
           <Route path='/' element={<Main/>}/>
           <Route path='/about' element={<About/>}/>
-          {/* <Route path='/menu' element={<Menu/>} /> */}
+          <Route path='/menu' element={<Menu/>} />
           <Route path='/reservations' 
             element={<BookingPage 
               dinerData={dinerData} 
