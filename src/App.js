@@ -8,7 +8,7 @@ import BookingPage from './components/BookingPage';
 import Order from './components/Order';
 import Login from './components/Login';
 
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import {HashRouter, BrowserRouter, Routes, Route} from 'react-router-dom'
 import { useState } from 'react';
 import Confirmation from './components/Confirmation';
 
@@ -24,26 +24,28 @@ function App(props) {
     <>
     <div style={{backgroundImage: `url(${background})`, backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',}}>
-      <BrowserRouter>
+      {/* <BrowserRouter> */}
+      <HashRouter>
         <Nav/>
-        <Routes>
-          <Route path='/' element={<Main/>}/>
-          <Route path='/about' element={<About/>}/>
-          <Route path='/menu' element={<Menu/>} />
-          <Route path='/reservations' 
-            element={<BookingPage 
-              dinerData={dinerData} 
-              setDinerData={setDinerData}
-              />} />
-          <Route path='confirmation' 
-            element={<Confirmation 
-              dinerData={dinerData} 
-              setDinerData={setDinerData} 
-              />}/>
-          <Route path='/order' element={<Order/>} />
-          <Route path='/login' element={<Login/>} />
-        </Routes>
-      </BrowserRouter>
+          <Routes>
+            <Route path='/littleLemon' element={<Main/>}/>
+            <Route path='/about' element={<About/>}/>
+            <Route path='/menu' element={<Menu/>} />
+            <Route path='/reservations' 
+              element={<BookingPage 
+                dinerData={dinerData} 
+                setDinerData={setDinerData}
+                />} />
+            <Route path='confirmation' 
+              element={<Confirmation 
+                dinerData={dinerData} 
+                setDinerData={setDinerData} 
+                />}/>
+            <Route path='/order' element={<Order/>} />
+            <Route path='/login' element={<Login/>} />
+          </Routes>
+        </HashRouter>
+      {/* </BrowserRouter> */}
       <Footer/>
     </div>
     
