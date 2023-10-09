@@ -25,10 +25,10 @@ function App(props) {
     <div style={{backgroundImage: `url(${background})`, backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',}}>
       {/* <BrowserRouter> */}
-      <HashRouter>
+      <HashRouter basename='/'>
         <Nav/>
           <Routes>
-            <Route path='/littleLemon' element={<Main/>}/>
+            <Route exact path='/' element={<Main/>}/>
             <Route path='/about' element={<About/>}/>
             <Route path='/menu' element={<Menu/>} />
             <Route path='/reservations' 
