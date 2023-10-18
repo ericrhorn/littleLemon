@@ -1,5 +1,11 @@
 import { useState } from "react";
-import '../style/form.css'
+// import '../style/form.css'
+
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import { Button } from "react-bootstrap";
 
 
 const BookingForm = (props) => {
@@ -122,10 +128,63 @@ const BookingForm = (props) => {
 
   return (
     <>
-      <div style={{marginTop: '50px'}}className='form-title' noValidate>
+      {/* <div className='form-title' noValidate>
         <h4>Please Complete the reservation form</h4>
-      </div>
-      <form onSubmit={handleSubmit}  id='res-submit'>
+      </div> */}
+      <Container style={{color: 'white'}}>
+        <Row>
+          <Form className="justify-content-center mb-5">
+
+            <Col className="mb-2 px-2" md={3}>
+              <Form.Group className="mb-3">
+                <Form.Check type="radio" aria-label="radio 1" label="Indoor Seating" style={{}}/>
+              </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label>Date</Form.Label>
+                <Form.Select size="lg">
+                <option>Select Date</option>
+                </Form.Select>
+                {/* <Form.Control size="lg" type="text" placeholder="Large text" /> */}
+              </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label>Occasion</Form.Label>
+                {/* <Form.Control size="lg" type="text" placeholder="Large text" /> */}
+                <Form.Select size="lg">
+                  <option>Occation</option>
+                </Form.Select>
+              </Form.Group>
+            </Col>
+
+            <Col className="mb-2 px-2" md={3}>
+              <Form.Group className="mb-3">
+                <Form.Check type="radio" aria-label="radio 1" label="Indoor Seating" style={{}}/>
+              </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label>Numner of Diners</Form.Label>
+                <Form.Select size="lg">
+                <option>No Diners</option>
+                </Form.Select>
+                {/* <Form.Control size="lg" type="text" placeholder="Large text" /> */}
+              </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label>Time</Form.Label>
+                {/* <Form.Control size="lg" type="text" placeholder="Large text" /> */}
+                <Form.Select size="lg">
+                  <option>Select Time</option>
+                </Form.Select>
+              </Form.Group>
+            </Col>
+        </Form>
+          <Form.Group as={Row} className="text-center">
+            <Col>
+              <Button type="submit">Reserve a Table</Button>
+            </Col>
+          </Form.Group>
+        </Row>
+      </Container>
+
+
+      {/* <form onSubmit={handleSubmit}  id='res-submit'>
         <div className="one">
           <p>Diner Information</p>
           <label htmlFor='firstName'>First Name</label>
@@ -203,12 +262,12 @@ const BookingForm = (props) => {
           </select>
         {formErrors.occasion && <div className='err'>{formErrors.occasion}</div>}
         </div>
-      </form>
-      <div className='res-button' >
+      </form> */}
+      {/* <div className='res-button' >
         <div className="progress-container">
       </div>
       <button type="submit" form='res-submit'>Make Reservation</button>
-      </div>
+      </div> */}
     </>
   )
 }

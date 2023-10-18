@@ -5,7 +5,10 @@
 
 .color1{
   display: flex;
-  align-items: center;
+  /* align-items: center; */
+
+  padding-top: 50px;
+
   background-color: #495e57;
   height: 300px;
   display: flex;

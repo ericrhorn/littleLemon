@@ -119,12 +119,14 @@ const BookingPage = (props) => {
   return (
     <>
     <main className="container">
-      <div className="color1">
-        <h1>Little Lemon Reservations</h1>
-      </div>
-        <div className="container">
+      <div className="color1" style={{height: 'auto'}}>
+        <div style={{paddingBottom: "25px"}}>
+          <h1>Reservations</h1>
+        </div>
+      {/* </div> */}
+        {/* <div className="container">
           <div className="main">
-            <div className="main-content">
+            <div className="main-content"> */}
               {
                 isSubmitted ?
                   <Confirmation
@@ -150,9 +152,10 @@ const BookingPage = (props) => {
                     // errors={errors}
                   />
                 }
-            </div>
+                </div>
+            {/* </div>
         </div>
-      </div>
+      </div> */}
     </main>
   </>
   )
