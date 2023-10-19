@@ -15,11 +15,11 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-
+/* 
 .res-button {
   text-align: center;
   margin-top: 50px;
-}
+} */
 
 .color1 h1 {
   color: #f4ce14;
@@ -27,25 +27,26 @@
   font-size: 40px;
 }
 
-.res-button button {
+.res-button{
   background-color: #f4ce14;
-  border-radius: 10px;
-  height: 30px;
-  width: 150px;
+  /* border-radius: 10px; */
+  height: 40px;
+  width: 250px;
   border: none;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: bold;
-  margin-top: -10px;
+  margin-top: 50px;
+  color: black;
 }
 
-button:hover {
+.res-button:hover {
   background-color: #ee9972;
   cursor: pointer;
 }
 
-button:focus {
+/* .res-button:focus {
   background-color: #495e57;
-}
+} */
 
 
 
@@ -114,6 +115,10 @@ form {
   margin-bottom: 20px;
 }
 
+
+.selection {
+  text-align: center;
+}
 
 
 

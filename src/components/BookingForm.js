@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import '../style/form.css'
+import '../style/form.css'
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -10,9 +10,23 @@ import { Button } from "react-bootstrap";
 
 const BookingForm = (props) => {
 
+  // const [validated, setValidated] = useState(false);
+
+  // const handleSubmit = (event) => {
+  //   const form = event.currentTarget;
+  //   if (form.checkValidity() === false) {
+  //     event.preventDefault();
+  //     event.stopPropagation();
+  //   }
+
+  //   setValidated(true);
+  // };
 
 
-    const currantDate = new Date().toISOString().split('T')[0];
+
+
+
+  const currentDate = new Date().toISOString().split('T')[0];
 
   const {
     availableTimes, 
@@ -133,7 +147,7 @@ const BookingForm = (props) => {
       </div> */}
       <Container style={{color: 'white'}}>
         <Row>
-          <Form className="justify-content-center mb-5">
+          <Form className="justify-content-center">
 
             <Col className="mb-2 px-2" md={3}>
               <Form.Group className="mb-3">
@@ -141,15 +155,13 @@ const BookingForm = (props) => {
               </Form.Group>
               <Form.Group className="mb-3">
                 <Form.Label>Date</Form.Label>
-                <Form.Select size="lg">
-                <option>Select Date</option>
-                </Form.Select>
-                {/* <Form.Control size="lg" type="text" placeholder="Large text" /> */}
+              <Form.Control size="lg" type="date" min={currentDate} id='date' name="date" value={diner.date || currentDate} onChange={handleDateChange}>
+              </Form.Control>
               </Form.Group>
               <Form.Group className="mb-3">
                 <Form.Label>Occasion</Form.Label>
                 {/* <Form.Control size="lg" type="text" placeholder="Large text" /> */}
-                <Form.Select size="lg">
+                <Form.Select size="lg" className="selection">
                   <option>Occation</option>
                 </Form.Select>
               </Form.Group>
@@ -161,7 +173,7 @@ const BookingForm = (props) => {
               </Form.Group>
               <Form.Group className="mb-3">
                 <Form.Label>Numner of Diners</Form.Label>
-                <Form.Select size="lg">
+                <Form.Select size="lg" className="selection">
                 <option>No Diners</option>
                 </Form.Select>
                 {/* <Form.Control size="lg" type="text" placeholder="Large text" /> */}
@@ -169,15 +181,22 @@ const BookingForm = (props) => {
               <Form.Group className="mb-3">
                 <Form.Label>Time</Form.Label>
                 {/* <Form.Control size="lg" type="text" placeholder="Large text" /> */}
-                <Form.Select size="lg">
-                  <option>Select Time</option>
-                </Form.Select>
+              <Form.Select size="lg" className="selection" id='time' name="time" value={diner.time} onChange={submitHandler}>
+                  <option value="" disabled selected>
+                    Select Time
+                  </option>
+                  {availableTimes.map((time) => {
+                  return(
+                      <option data-testid="availableTime" key={time} value={time}>{time}</option>
+                    )
+                  })}
+              </Form.Select>
               </Form.Group>
             </Col>
         </Form>
           <Form.Group as={Row} className="text-center">
             <Col>
-              <Button type="submit">Reserve a Table</Button>
+              <Button className='res-button' type="submit">Reserve a Table</Button>
             </Col>
           </Form.Group>
         </Row>
