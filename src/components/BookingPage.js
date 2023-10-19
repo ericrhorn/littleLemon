@@ -20,7 +20,9 @@ const BookingPage = (props) => {
     date: '',
     time: '',
     guests: '',
-    occasion: ''
+    occasion: '',
+    location: '',
+    comment: ''
   })
 
 

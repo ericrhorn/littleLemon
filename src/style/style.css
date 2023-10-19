@@ -44,6 +44,10 @@
   cursor: pointer;
 }
 
+.error {
+  font-size: 25px;
+}
+
 /* .res-button:focus {
   background-color: #495e57;
 } */

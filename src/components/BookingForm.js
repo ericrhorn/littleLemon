@@ -10,21 +10,7 @@ import { Button } from "react-bootstrap";
 
 const BookingForm = (props) => {
 
-  // const [validated, setValidated] = useState(false);
-
-  // const handleSubmit = (event) => {
-  //   const form = event.currentTarget;
-  //   if (form.checkValidity() === false) {
-  //     event.preventDefault();
-  //     event.stopPropagation();
-  //   }
-
-  //   setValidated(true);
-  // };
-
-
-
-
+  const [validated, setValidated] = useState(false);
 
   const currentDate = new Date().toISOString().split('T')[0];
 
@@ -51,77 +37,129 @@ const BookingForm = (props) => {
     console.log(diner)
   }
 
+    const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    if (form.checkValidity() === false) {
+      event.stopPropagation();
+    } else {
+      // Validation succeeded, you can submit the form or perform any other action here.
+        console.log('form submited', diner)
+        console.log('diner data form', dinerData)
+        setDinerData([...dinerData, diner])
+        setIsSubmitted(true)
+        console.log('is submitted?????', isSubmitted)
+        setDiner({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phoneNumber: '',
+          date: '',
+          time: '',
+          guests: '',
+          occasion: ''
+        })
+      console.log(diner)
+      submitForm(diner);
+    }
+    setValidated(true);
+  };
 
-  const handleSubmit = (e) => {
-      e.preventDefault()
-      const errors = validateForm();
-      setFormErrors(errors)
-          if (Object.keys(errors).length === 0){
-            console.log('form submited', diner)
-            console.log('diner data form', dinerData)
-            setDinerData([...dinerData, diner])
-            setIsSubmitted(true)
-            // setPercent(50)
-            console.log('is submitted?????', isSubmitted)
-            setDiner({
-              firstName: '',
-              lastName: '',
-              email: '',
-              phoneNumber: '',
-              date: '',
-              time: '',
-              guests: '',
-              occasion: ''
-            })
-          console.log(diner)
-          submitForm(diner)
-        }
-  console.log('form error', errors)
-}
+  //   const handleSubmit = (event) => {
+  //   const form = event.currentTarget;
+  //   if (form.checkValidity() === false) {
+  //     event.preventDefault();
+  //     event.stopPropagation();
+  //       console.log('form submited', diner)
+  //       console.log('diner data form', dinerData)
+  //       setDinerData([...dinerData, diner])
+  //       setIsSubmitted(true)
+  //       console.log('is submitted?????', isSubmitted)
+  //       setDiner({
+  //         firstName: '',
+  //         lastName: '',
+  //         email: '',
+  //         phoneNumber: '',
+  //         date: '',
+  //         time: '',
+  //         guests: '',
+  //         occasion: ''
+  //       })
+  //     console.log(diner)
+  //     submitForm(diner)
+  //   }
+  //   setValidated(true);
+  // };
 
-  const [formErrors, setFormErrors] = useState({})
+//   const handleSubmit = (e) => {
+//       e.preventDefault()
+//       const errors = validateForm();
+//       setFormErrors(errors)
+//           if (Object.keys(errors).length === 0){
+//             console.log('form submited', diner)
+//             console.log('diner data form', dinerData)
+//             setDinerData([...dinerData, diner])
+//             setIsSubmitted(true)
+//             setPercent(50)
+//             console.log('is submitted?????', isSubmitted)
+//             setDiner({
+//               firstName: '',
+//               lastName: '',
+//               email: '',
+//               phoneNumber: '',
+//               date: '',
+//               time: '',
+//               guests: '',
+//               occasion: ''
+//             })
+//           console.log(diner)
+//           submitForm(diner)
+//         }
+//   console.log('form error', errors)
+// }
 
-  const validateForm = () => {
-    const errors = {};
-    if (!diner.firstName.trim()){
-      errors.firstName = 'A first name is required';
-    } else if (diner.firstName.length < 2){
-      errors.firstName = 'A first name must be longer than 2 characters';
-    }
-    if (!diner.lastName.trim()){
-      errors.lastName = 'A last name is required';
-    } else if (diner.lastName.length < 2){
-      errors.lastName = 'A first name must be longer than 2 characters';
-    }
-    if (!diner.email.trim()){
-      errors.email = 'An email is required'
-    }else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(diner.email)) {
-      errors.email = 'Please enter a valid email';
-    }
-     if (!diner.phoneNumber){
-      errors.phoneNumber = 'A phone number is required';
-    } else if (diner.phoneNumber.length < 2 || diner.phoneNumber.length > 10){
-      errors.phoneNumber = 'Please enter a valid 10 digit phone number';
-    }
-    if (!diner.date){
-      errors.date = 'A date is required';
-    }
-    if (!diner.time){
-      errors.time = 'A time is required';
-    }
-    if (!diner.guests){
-      errors.guests = 'Number of guests are required';
-    }
-    if (!diner.occasion){
-      errors.occasion = 'Please select an occation';
-    }
-    return errors
-  }
+  // const [formErrors, setFormErrors] = useState({})
+
+  // const validateForm = () => {
+  //   const errors = {};
+  //   if (!diner.firstName.trim()){
+  //     errors.firstName = 'A first name is required';
+  //   } else if (diner.firstName.length < 2){
+  //     errors.firstName = 'A first name must be longer than 2 characters';
+  //   }
+  //   if (!diner.lastName.trim()){
+  //     errors.lastName = 'A last name is required';
+  //   } else if (diner.lastName.length < 2){
+  //     errors.lastName = 'A first name must be longer than 2 characters';
+  //   }
+  //   if (!diner.email.trim()){
+  //     errors.email = 'An email is required'
+  //   }else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(diner.email)) {
+  //     errors.email = 'Please enter a valid email';
+  //   }
+  //    if (!diner.phoneNumber){
+  //     errors.phoneNumber = 'A phone number is required';
+  //   } else if (diner.phoneNumber.length < 2 || diner.phoneNumber.length > 10){
+  //     errors.phoneNumber = 'Please enter a valid 10 digit phone number';
+  //   }
+  //   if (!diner.date){
+  //     errors.date = 'A date is required';
+  //   }
+  //   if (!diner.time){
+  //     errors.time = 'A time is required';
+  //   }
+  //   if (!diner.guests){
+  //     errors.guests = 'Number of guests are required';
+  //   }
+  //   if (!diner.occasion){
+  //     errors.occasion = 'Please select an occation';
+  //   }
+  //   return errors
+  // }
 
   const {isSubmitted, setIsSubmitted} = props;
 
    const [numberOfGuests] = useState ([
-    {value: 'null', text : 'Number of Guests'},
     {value: '2', text : '2'},
     {value: '3', text : '3'},
     {value: '4', text : '4'},
@@ -134,7 +172,6 @@ const BookingForm = (props) => {
   ])
 
     const [occasionType] = useState ([
-    {value: 'null', text: 'Occasion'},
     {value: 'Just Dinner', text: 'Just Dinner'},
     {value: 'Anniversary', text: 'Anniversary'},
     {value: 'Birthday', text: 'Birthday'},
@@ -147,42 +184,63 @@ const BookingForm = (props) => {
       </div> */}
       <Container style={{color: 'white'}}>
         <Row>
-          <Form className="justify-content-center">
+          <Form className="justify-content-center" noValidate validated={validated} onSubmit={handleSubmit} id='res-submit'>
 
             <Col className="mb-2 px-2" md={3}>
+
               <Form.Group className="mb-3">
                 <Form.Check type="radio" aria-label="radio 1" label="Indoor Seating" style={{}}/>
+                  <Form.Control.Feedback className="error" type="invalid">Please choose a Date.</Form.Control.Feedback>
               </Form.Group>
+
               <Form.Group className="mb-3">
-                <Form.Label>Date</Form.Label>
-              <Form.Control size="lg" type="date" min={currentDate} id='date' name="date" value={diner.date || currentDate} onChange={handleDateChange}>
-              </Form.Control>
+                  <Form.Label>Date</Form.Label>
+                <Form.Control required size="lg" type="date" min={currentDate} id='date' name="date" value={diner.date || currentDate} onChange={handleDateChange}>
+                </Form.Control>
+                <Form.Control.Feedback className="error" type="invalid">Please choose a Date.</Form.Control.Feedback>
               </Form.Group>
+
               <Form.Group className="mb-3">
                 <Form.Label>Occasion</Form.Label>
                 {/* <Form.Control size="lg" type="text" placeholder="Large text" /> */}
-                <Form.Select size="lg" className="selection">
-                  <option>Occation</option>
+                <Form.Select required id='occasion' name="occasion" value={diner.occasion} onChange={submitHandler} size="lg" className="selection">
+                  <option value="" disabled>
+                    Select Occation
+                  </option>
+                {occasionType.map(indx=>
+                  <option key={indx.value} value={indx.value}>{indx.text}</option>
+                )}
                 </Form.Select>
+                                <Form.Control.Feedback className="error" type="invalid">Please choose a Date.</Form.Control.Feedback>
+
               </Form.Group>
             </Col>
 
             <Col className="mb-2 px-2" md={3}>
               <Form.Group className="mb-3">
                 <Form.Check type="radio" aria-label="radio 1" label="Indoor Seating" style={{}}/>
+                                <Form.Control.Feedback className="error" type="invalid">Please choose a Date.</Form.Control.Feedback>
+
               </Form.Group>
+
               <Form.Group className="mb-3">
                 <Form.Label>Numner of Diners</Form.Label>
-                <Form.Select size="lg" className="selection">
-                <option>No Diners</option>
+                <Form.Select required size="lg" className="selection" id='guests' name="guests" value={diner.guests} onChange={submitHandler}>
+                  <option value="" disabled>
+                    No. of Diners
+                  </option>
+                    {numberOfGuests.map(index=>
+                  <option key={index.value} value={index.value}>{index.text}</option>
+                )}
                 </Form.Select>
-                {/* <Form.Control size="lg" type="text" placeholder="Large text" /> */}
+                                <Form.Control.Feedback className="error" type="invalid">Please choose a Date.</Form.Control.Feedback>
+
               </Form.Group>
+
               <Form.Group className="mb-3">
                 <Form.Label>Time</Form.Label>
-                {/* <Form.Control size="lg" type="text" placeholder="Large text" /> */}
-              <Form.Select size="lg" className="selection" id='time' name="time" value={diner.time} onChange={submitHandler}>
-                  <option value="" disabled selected>
+              <Form.Select required size="lg" className="selection" id='time' name="time" value={diner.time} onChange={submitHandler}>
+                  <option value="" disabled>
                     Select Time
                   </option>
                   {availableTimes.map((time) => {
@@ -191,12 +249,14 @@ const BookingForm = (props) => {
                     )
                   })}
               </Form.Select>
+                              <Form.Control.Feedback className="error" type="invalid">Please choose a Date.</Form.Control.Feedback>
+
               </Form.Group>
             </Col>
         </Form>
           <Form.Group as={Row} className="text-center">
             <Col>
-              <Button className='res-button' type="submit">Reserve a Table</Button>
+              <Button type="submit" form='res-submit' className='res-button'>Reserve a Table</Button>
             </Col>
           </Form.Group>
         </Row>
