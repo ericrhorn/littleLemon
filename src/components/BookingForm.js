@@ -179,9 +179,6 @@ const BookingForm = (props) => {
 
   return (
     <>
-      {/* <div className='form-title' noValidate>
-        <h4>Please Complete the reservation form</h4>
-      </div> */}
       <Container style={{color: 'white'}}>
         <Row>
           <Form className="justify-content-center" noValidate validated={validated} onSubmit={handleSubmit} id='res-submit'>
@@ -211,16 +208,14 @@ const BookingForm = (props) => {
                   <option key={indx.value} value={indx.value}>{indx.text}</option>
                 )}
                 </Form.Select>
-                                <Form.Control.Feedback className="error" type="invalid">Please choose a Date.</Form.Control.Feedback>
-
+                  <Form.Control.Feedback className="error" type="invalid">Please choose a Date.</Form.Control.Feedback>
               </Form.Group>
             </Col>
 
             <Col className="mb-2 px-2" md={3}>
               <Form.Group className="mb-3">
                 <Form.Check type="radio" aria-label="radio 1" label="Indoor Seating" style={{}}/>
-                                <Form.Control.Feedback className="error" type="invalid">Please choose a Date.</Form.Control.Feedback>
-
+                  <Form.Control.Feedback className="error" type="invalid">Please choose a Date.</Form.Control.Feedback>
               </Form.Group>
 
               <Form.Group className="mb-3">
@@ -233,8 +228,7 @@ const BookingForm = (props) => {
                   <option key={index.value} value={index.value}>{index.text}</option>
                 )}
                 </Form.Select>
-                                <Form.Control.Feedback className="error" type="invalid">Please choose a Date.</Form.Control.Feedback>
-
+                  <Form.Control.Feedback className="error" type="invalid">Please choose a Date.</Form.Control.Feedback>
               </Form.Group>
 
               <Form.Group className="mb-3">
@@ -249,8 +243,7 @@ const BookingForm = (props) => {
                     )
                   })}
               </Form.Select>
-                              <Form.Control.Feedback className="error" type="invalid">Please choose a Date.</Form.Control.Feedback>
-
+                <Form.Control.Feedback className="error" type="invalid">Please choose a Date.</Form.Control.Feedback>
               </Form.Group>
             </Col>
         </Form>
