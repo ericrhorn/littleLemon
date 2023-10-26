@@ -21,7 +21,7 @@ const BookingForm = (props) => {
     diner, 
     setDiner, 
     dinerData, 
-    setDinerData
+    setDinerData,
   } = props
 
   const handleDateChange = (e) => {
@@ -36,6 +36,13 @@ const BookingForm = (props) => {
     })
     console.log(diner)
   }
+
+  const handleLocationChange = (e) => {
+  setDiner({
+    ...diner,
+    location: e.target.value,
+  });
+};
 
     const handleSubmit = (event) => {
     event.preventDefault();
@@ -57,13 +64,16 @@ const BookingForm = (props) => {
           date: '',
           time: '',
           guests: '',
-          occasion: ''
+          occasion: '',
+          location: '',
+          comment: ''
         })
       console.log(diner)
       submitForm(diner);
     }
     setValidated(true);
   };
+
 
   //   const handleSubmit = (event) => {
   //   const form = event.currentTarget;
@@ -186,15 +196,23 @@ const BookingForm = (props) => {
             <Col className="mb-2 px-2" md={3}>
 
               <Form.Group className="mb-3">
-                <Form.Check type="radio" aria-label="radio 1" label="Indoor Seating" style={{}}/>
-                  <Form.Control.Feedback className="error" type="invalid">Please choose a Date.</Form.Control.Feedback>
+                <Form.Check 
+                  required 
+                  type="radio" 
+                  aria-label="radio 1" 
+                  label="Indoor Seating" 
+                  name='location'
+                  id='indoor'
+                  value='Indoor Seating'
+                  checked={diner.location === 'Indoor Seating'}
+                  onChange={handleLocationChange}/>
               </Form.Group>
 
               <Form.Group className="mb-3">
                   <Form.Label>Date</Form.Label>
                 <Form.Control required size="lg" type="date" min={currentDate} id='date' name="date" value={diner.date || currentDate} onChange={handleDateChange}>
                 </Form.Control>
-                <Form.Control.Feedback className="error" type="invalid">Please choose a Date.</Form.Control.Feedback>
+                <Form.Control.Feedback className="error" type="invalid">Please select a Date</Form.Control.Feedback>
               </Form.Group>
 
               <Form.Group className="mb-3">
@@ -208,14 +226,22 @@ const BookingForm = (props) => {
                   <option key={indx.value} value={indx.value}>{indx.text}</option>
                 )}
                 </Form.Select>
-                  <Form.Control.Feedback className="error" type="invalid">Please choose a Date.</Form.Control.Feedback>
+                  <Form.Control.Feedback className="error" type="invalid">Please select an Occasion</Form.Control.Feedback>
               </Form.Group>
             </Col>
 
             <Col className="mb-2 px-2" md={3}>
               <Form.Group className="mb-3">
-                <Form.Check type="radio" aria-label="radio 1" label="Indoor Seating" style={{}}/>
-                  <Form.Control.Feedback className="error" type="invalid">Please choose a Date.</Form.Control.Feedback>
+                <Form.Check 
+                  required 
+                  type="radio" 
+                  aria-label="radio 1" 
+                  label="Outdoor Seating" 
+                  name='location'
+                  id='outdoor'
+                  value='Outdoor Seating'
+                  checked={diner.location === 'Outdoor Seating'}
+                  onChange={handleLocationChange}/>
               </Form.Group>
 
               <Form.Group className="mb-3">
@@ -228,7 +254,7 @@ const BookingForm = (props) => {
                   <option key={index.value} value={index.value}>{index.text}</option>
                 )}
                 </Form.Select>
-                  <Form.Control.Feedback className="error" type="invalid">Please choose a Date.</Form.Control.Feedback>
+                  <Form.Control.Feedback className="error" type="invalid">Please enter no. of Diners</Form.Control.Feedback>
               </Form.Group>
 
               <Form.Group className="mb-3">
@@ -243,15 +269,15 @@ const BookingForm = (props) => {
                     )
                   })}
               </Form.Select>
-                <Form.Control.Feedback className="error" type="invalid">Please choose a Date.</Form.Control.Feedback>
+                <Form.Control.Feedback className="error" type="invalid">Please select a Time</Form.Control.Feedback>
               </Form.Group>
             </Col>
         </Form>
-          <Form.Group as={Row} className="text-center">
-            <Col>
-              <Button type="submit" form='res-submit' className='res-button'>Reserve a Table</Button>
-            </Col>
-          </Form.Group>
+        <Form.Group as={Row} className="text-center" style={{marginLeft: '1px'}}>
+          <Col>
+            <Button type="submit" form='res-submit' className='res-button'>Reserve a Table</Button>
+          </Col>
+        </Form.Group>
         </Row>
       </Container>
 

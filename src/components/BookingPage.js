@@ -17,15 +17,13 @@ const BookingPage = (props) => {
     lastName: '',
     email: '',
     phoneNumber: '',
-    date: '',
+    date: 'null',
     time: '',
     guests: '',
     occasion: '',
     location: '',
     comment: ''
   })
-
-
 
   //   const [formErrors, setFormErrors] = useState({})
 
@@ -134,6 +132,11 @@ const BookingPage = (props) => {
                   <Confirmation
                     dinerData={dinerData}
                     setDinerData={setDinerData}
+                    // isSubmitted={isSubmitted}
+                    // setIsSubmitted={setIsSubmitted}
+                    diner={diner}
+                    setDiner={setDiner}
+                    submitForm={submitForm}
                   />
                   :
                   <BookingForm

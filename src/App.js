@@ -23,8 +23,7 @@ function App(props) {
 
   return (
     <>
-    <div style={{backgroundImage: `url(${background})`, backgroundRepeat: 'no-repeat',
-  backgroundSize: 'cover',}}>
+    <div style={{backgroundImage: `url(${background})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover',}}>
       {/* <BrowserRouter> */}
       <HashRouter basename='/'>
         <Nav/>
