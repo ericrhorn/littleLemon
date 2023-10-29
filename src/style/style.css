@@ -55,8 +55,8 @@
 
 
 .main{
-  text-align: center;
-  height: auto;
+  /* text-align: center; */
+  /* height: 100vh; */
 }
 
 .main-content{

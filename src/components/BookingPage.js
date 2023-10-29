@@ -118,7 +118,7 @@ const BookingPage = (props) => {
 
   return (
     <>
-    <main className="container">
+    <main className="container" style={{height: '72vh'}}>
       <div className="color1" style={{height: 'auto'}}>
         <div style={{paddingBottom: "25px"}}>
           <h1>Reservations</h1>
